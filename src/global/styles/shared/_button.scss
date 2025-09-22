@@ -1,0 +1,72 @@
+// button.scss
+@use '../abstract/index' as *;
+
+// Primary button
+.primary__btn {
+    cursor: pointer;
+    @include border-primary;
+    @include transition-smooth;
+    background-color: $green-light-color;
+
+    max-width: 150px;
+    padding: 0.5rem 1.5rem;
+    border-radius: 8.5px;
+
+    &:hover {
+        transform: translateY(-1.25px);
+        box-shadow: 0 5px 8px 1.5px rgba(255, 255, 255, 0.1);
+    }
+}
+
+// Secondary button
+.secondary__btn {
+    cursor: pointer;
+    @include border-secondary;
+    @include transition-smooth;
+    background-color: $grey-light-color;
+
+    letter-spacing: 0.4px;
+    max-width: 150px;
+    padding: 0.5rem 1.5rem;
+    border-radius: 8.5px;
+
+    &:hover {
+        transform: translateY(-1.25px);
+        box-shadow: 0 5px 8px 1.5px rgba(255, 255, 255, 0.1);
+    }
+}
+
+// Default button
+.default__btn {
+    cursor: pointer;
+    @include border-default;
+    @include transition-smooth;
+
+    letter-spacing: 0.4px;
+    max-width: 150px;
+    padding: 0.5rem 1.5rem;
+    border-radius: 8.5px;
+
+    &:hover {
+        transform: translateY(-1.25px);
+        box-shadow: 0 5px 8px 1.5px rgba(255, 255, 255, 0.1);
+    }
+}
+
+// Destroy button
+.destroy__btn {
+    cursor: pointer;
+    @include border-destroy;
+    @include transition-smooth;
+    background-color: $red-light-color;
+
+    letter-spacing: 0.4px;
+    max-width: 150px;
+    padding: 0.5rem 1.5rem;
+    border-radius: 8.5px;
+
+    &:hover {
+        transform: translateY(-1.25px);
+        box-shadow: 0 5px 8px 1.5px rgba(255, 255, 255, 0.1);
+    }
+}

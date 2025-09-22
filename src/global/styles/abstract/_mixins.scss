@@ -1,0 +1,25 @@
+// mixin.scss
+
+// border
+@mixin border-primary {
+    border: 2px solid #14532d;
+}
+
+@mixin border-secondary {
+    border: 2px solid #262626;
+}
+
+@mixin border-default {
+    border: 2px solid #343434;
+}
+
+@mixin border-destroy {
+    border: 2px solid #7c2422;
+}
+
+// transition
+@mixin transition-smooth {
+    transition: all 0.3s ease-in;
+}
+
+

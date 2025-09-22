@@ -19,8 +19,8 @@ Dibutuhkan beberapa library tambahan untuk menjalankan web aplikasi ini, berikut
   `npm i locomotive-scroll`
 > Lottie - Loading animation library
   `npm i lottie-react`
-> Toast - Popup notification library
-  `npm i react-hot-toast`
+> Sonner - Popup notification library
+  `npm i sonner`
 > React-Hook-Form - Form library
   `npm i react-hook-form`
 > Axios - HTTP client library
@@ -31,4 +31,4 @@ Dibutuhkan beberapa library tambahan untuk menjalankan web aplikasi ini, berikut
   `npm i -D dotenv-cli`
 
 Complete command:
-`npm i sass zod @tanstack/react-query gsap framer-motion lottie-react swiper react-hot-toast react-hook-form axios locomotive-scroll lucide`
+`npm i sass zod @tanstack/react-query gsap framer-motion lottie-react swiper sonner react-hook-form axios locomotive-scroll lucide`

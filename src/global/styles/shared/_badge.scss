@@ -1,0 +1,43 @@
+// badge.scss
+@use '../abstract/index' as *;
+
+.primary__bdg {
+    cursor: default;
+    user-select: none;
+    border: 1px solid green;
+    background-color: $green-light-color;
+
+    max-width: 100px;
+    padding: 0.15rem 1rem;
+    border-radius: 18px;
+}
+
+.destroy__bdg {
+    cursor: default;
+    user-select: none;
+    border: 1px solid #991b1b;
+    background-color: $red-light-color;
+
+    max-width: 100px;
+    padding: 0.15rem 1rem;
+    border-radius: 18px;
+}
+
+.default__bdg {
+    cursor: default;
+    user-select: none;
+}
+
+.blacklisted__bdg {
+    cursor: default;
+    user-select: none;    
+}
+
+.verified__bdg {
+    cursor: default;
+    user-select: none;  
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.25rem;
+}
