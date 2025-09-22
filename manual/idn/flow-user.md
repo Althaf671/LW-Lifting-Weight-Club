@@ -10,10 +10,10 @@ Dimulai dengan auth terlebih dahulu
 
 
 #### 🔐 General Security and Strategy  ####
-**CSRF Protection with token**
+**CSRF Protection with token** </br>
 
 
-**Refresh Token Rotation**
+**Refresh Token Rotation** </br>
 Ini adalah skenario *refresh token rotation*. Semua rute dengan *METHOD* yang 
 perlu autentikasi akan menggunakan *rotation* dengan Axios Interceptor. 
 Di dalam skenario ini setiap kali Access Token kadaluarsa maka Refresh Token akan 
@@ -29,7 +29,7 @@ dan Refresh Token dan menyimpan sebagai cookie(s) baru untuk dikirim ke user;
     Jika user melakukan request ke rute Refresh Token Rotation maka tandai IP Address
     sebagai spammer pada rute terkait.
 
-**Concurrent Access Limit and Renew QR code**
+**Concurrent Access Limit and Renew QR code** </br>
 Jika suatu waktu kode QR unik user dicuri maka perlu *concurrent access limit* yaitu kode 
 hanya bisa di scan setiap 5x setiap 1 menit. User juga dapat melakukan renew QR code yang
 akan mengubah *field* createdAt (saja) dan field lain tetap sama dan setiap scan kode QR 
@@ -37,7 +37,7 @@ akan dicatat ke log;
 
 
 #### 👮‍♂️ User Auth ####
-**Register with Credentials**
+**Register with Credentials** </br>
 1. User isi form registrasi berisi name, email, password, *confirm* password, tanggal lahir.
     - Zod akan memvalidasi semua input;
         * jika input form tidak sesuai maka zod akan menolak;
@@ -73,7 +73,7 @@ akan dicatat ke log;
     Jika user melakukan spam *submit* form OTP maka tandai IP Address
     sebagai spammer pada rute terkait.
 
-**Login with Credentials**
+**Login with Credentials** </br>
 1. User isi form masuk berisi email dan password;
     - Zod akan memvalidasi semua input;
         * jika format email salah maka beri pesan error;
@@ -95,7 +95,7 @@ akan dicatat ke log;
     Jika user melakukan spam *submit* form masuk maka tandai IP Address
     sebagai spammer pada rute terkait.
 
-**Register and Login with Google OAuth**
+**Register and Login with Google OAuth** </br>
 Ini adalah metode masuk *passwordless* dimana user tidak perlu memasukan form registrasi
 atau login, cukup klik tombol Login with Google;
 1. User klik tombol Login with Google dan ikuti alur;
@@ -112,7 +112,7 @@ atau login, cukup klik tombol Login with Google;
     Jika user melakukan spam *submit* form masuk maka tandai IP Address
     sebagai spammer pada rute terkait.
 
-**Forgot Password - Credentials Login only**
+**Forgot Password - Credentials Login only** </br>
 Saat user ingin mengubah password, user dapat klik tombol Forgot Password di Halaman masuk 
 atau di halaman Setting;
 1. User diminta memasukkan email ke kolom email
@@ -135,7 +135,7 @@ atau di halaman Setting;
     sebagai spammer pada rute terkait.
 
 
-**Reset Password**
+**Reset Password** </br>
 Setelah user klik link Reset Password maka user harus mengisi password baru dan konfirmasi 
 dalam 20 menit;
 1. User mengisi kolom password dan Zod akan memvalidasi;
@@ -152,7 +152,7 @@ dalam 20 menit;
     sebagai spammer pada rute terkait.
 
 
-**Account Deactivation**
+**Account Deactivation** </br>
 Saat user memutuskan untuk menonaktifkan akun dia dapat melakukan langkah berikut:
 1. User klik diactivate account;
 2. Server akan validasi auth token(s) dan *subscriptions*;
@@ -166,7 +166,7 @@ Saat user memutuskan untuk menonaktifkan akun dia dapat melakukan langkah beriku
 
 
 ### 📋 Business Logic ###
-#### Subscription plan ####
+#### 💲 Subscription plan ####
 1. User yang telah registrasi dan login dapat memilih plan membership:
     - Jika belum melakukan registrasi atau login maka saat tombol *subscription* diklik
     app akan mengalihkan user ke halaman masuk;
