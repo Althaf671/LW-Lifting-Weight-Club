@@ -1,13 +1,13 @@
-# THIRD-PARTY LIBRARY INSTALLATION #
+# SETUP APP & LIBRARY PIHAK KETIGA #
 
-Several additional libraries are required to run this web application. The following are the required libraries:
+Dibutuhkan beberapa library tambahan untuk menjalankan web aplikasi ini, berikut adalah library yang diperlukan:
 
 **Libraries**
 > Sass - CSS framework (optional)
   `npm i sass`
 > Zod - Validator library
   `npm i zod`
-> React Query - Data management and caching library
+> React Query - Data management dan caching library
   `npm i @tanstack/react-query`
 > GSAP - Animation library
   `npm i gsap`
@@ -27,6 +27,8 @@ Several additional libraries are required to run this web application. The follo
   `npm i axios`
 > Lucide - Icons library
   `npm i lucide`
-  
+> dotenv-cli - env management library
+  `npm i -D dotenv-cli`
+
 Complete command:
 `npm i sass zod @tanstack/react-query gsap framer-motion lottie-react swiper react-hot-toast react-hook-form axios locomotive-scroll lucide`

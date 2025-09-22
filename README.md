@@ -1,6 +1,9 @@
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started
+Please read the following flow first to be able understand deeply about my project.
+[User Flow Documentation IDN](./manual/idn/flow.md)
+[User Flow Documentation ENG](./manual/eng/flow.md)
 
 First, run the development server:
 

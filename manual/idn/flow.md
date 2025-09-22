@@ -7,7 +7,9 @@ Web App Lifiting memiliki 2 flow secara garis besar yaitu user flow dan admin fl
 ### Auth ###
 Dimulai dengan auth terlebih dahulu
 
-#### General Security and Strategy ####
+
+
+#### 🔐 General Security and Strategy  ####
 **CSRF Protection with token**
 
 
@@ -27,9 +29,14 @@ dan Refresh Token dan menyimpan sebagai cookie(s) baru untuk dikirim ke user;
     Jika user melakukan request ke rute Refresh Token Rotation maka tandai IP Address
     sebagai spammer pada rute terkait.
 
+**Concurrent Access Limit and Renew QR code**
+Jika suatu waktu kode QR unik user dicuri maka perlu *concurrent access limit* yaitu kode 
+hanya bisa di scan setiap 5x setiap 1 menit. User juga dapat melakukan renew QR code yang
+akan mengubah *field* createdAt (saja) dan field lain tetap sama dan setiap scan kode QR 
+akan dicatat ke log;
 
 
-#### New User Auth ####
+#### 👮‍♂️ User Auth ####
 **Register with Credentials**
 1. User isi form registrasi berisi name, email, password, *confirm* password, tanggal lahir.
     - Zod akan memvalidasi semua input;
@@ -51,7 +58,7 @@ dan Refresh Token dan menyimpan sebagai cookie(s) baru untuk dikirim ke user;
 2. User menerima email berisi kode OTP yang dapat digunakan untuk mengisi kolom kode OTP;
 
 3. User mengisi kolom kode OTP dengan kode yang diberikan di email;
-    - User diminta menyelesaikan *challenge* reCaptcha v2;
+    - User diminta menyelesaikan *challenge* reCaptcha v2 saat klik tombol *submit*;
         * jika *challenge* gagal maka akan otomatis ke-*reset*;
         * jika berhasil maka lanjut ke langkah berikutnya;
     - Jika kode OTP salah atau kadaluarsa maka;
@@ -105,11 +112,64 @@ atau login, cukup klik tombol Login with Google;
     Jika user melakukan spam *submit* form masuk maka tandai IP Address
     sebagai spammer pada rute terkait.
 
+**Forgot Password - Credentials Login only**
+Saat user ingin mengubah password, user dapat klik tombol Forgot Password di Halaman masuk 
+atau di halaman Setting;
+1. User diminta memasukkan email ke kolom email
+    - Zod akan memvalidasi format email;
+        * jika format salah maka beri respon error;
+        * jika format benar maka lanjutkan ke langkah berikutnya;
+2. User klik tombol *sumbit* dan *challenge* reCaptcha muncul;
+    - User diminta menyelesaikan *challenge* reCaptcha v2;
+        * jika *challenge* gagal maka akan otomatis ke-*reset*;
+        * jika berhasil maka lanjut ke langkah berikutnya;
+    - Server menerima email dan mencocokan dengan email user;
+        * jika email tidak cocok maka beri respon email salah;
+        * jika email cocok maka server buat email berisi link
+        reset password dengan user Id sebagai identifier atau ulangi skenario ini;
+        * lanjut ke langkah berikutnya;
+    - Server mengirim email berisi link reset password ke user yang valid selama 20m;
+3. User klik link dan app mengalihkan user ke halaman khusus reset password dengan identifier;
+    *** Skenario Abusive - maks 3 x 60 min ***
+    Jika user melakukan spam *submit* form masuk maka tandai IP Address
+    sebagai spammer pada rute terkait.
 
 
-### Business Logic ###
-#### New User ####
+**Reset Password**
+Setelah user klik link Reset Password maka user harus mengisi password baru dan konfirmasi 
+dalam 20 menit;
+1. User mengisi kolom password dan Zod akan memvalidasi;
+    - Jika format password salah maka beri respon error;
+    - Jika format password benar maka lanjut ke langkah berikutnya;
+2. User mengisi kolom konfirmasi password dan zod akan memvalidasi;
+    - Jika password tidak sesuai maka aksi tidak dapat dilanjutkan sampai password cocok;
+    - Jika password cocok maka server menerima password dan memproses;
+    - Semua active session akan otomatis logout;
+    - Lanjut ke langkah berikutnya;
+3. App akan mengalihkan user kembali ke halaman login;
+    *** Skenario Abusive - maks 3 x 60 min ***
+    Jika user melakukan spam *submit* form masuk maka tandai IP Address
+    sebagai spammer pada rute terkait.
+
+
+**Account Deactivation**
+Saat user memutuskan untuk menonaktifkan akun dia dapat melakukan langkah berikut:
+1. User klik diactivate account;
+2. Server akan validasi auth token(s) dan *subscriptions*;
+    - Jika user masih punya *subcription(s) active maka tolak permintaan dan minta user *cancel subscriptions*;
+    - Jika user tidak punya *subcriptions* maka popup konfirmasi hapus akun muncul;
+    - User mengisi kolom konfirmasi bertulis "Delete my Account" yang divalidasi oleh zod;
+        * Jika user tidak mengisi kolom sesuai dengan tulisan di atas maka aksi tidak bisa dilanjutkan;
+        * Jika user mengisi kolom sesuai dengan tulisan di atas maka *payload* akan dikirim ke server;
+        * Server mengkonfirmasi *Account Deactivation*;
+3. Akun user di nonaktifkan dan app mengalihkan user ke halaman registrasi;
+
+
+### 📋 Business Logic ###
+#### Subscription plan ####
 1. User yang telah registrasi dan login dapat memilih plan membership:
+    - Jika belum melakukan registrasi atau login maka saat tombol *subscription* diklik
+    app akan mengalihkan user ke halaman masuk;
     - User memilih 1 plan:
         * Daily;
         * Weekly;
@@ -130,12 +190,13 @@ atau login, cukup klik tombol Login with Google;
         halaman plan membership;
         * Jika *subscription* berhasil maka user akan dialihkan ke halaman
         dashboard dan mendapatkan kode QR unik bernilai `hashedData` yang bernilai:
-        [`isSubscribed: true, plan: 'weekly', isDuration: 'XXXsec' tier: 'casual', isVerified: true, userId: 'cuuid', signature: "encrypted_hash, startDate: 'some-date', endDate: 'some-date`]; yang dapat di simpan ke local phone;
+        [`isSubscribed: true, plan: 'weekly', expiresIn: 'XXXsec' tier: 'casual', isVerified: true, userId: 'cuuid', signature: "encrypted_hash, startDate: 'some-date', endDate: 'some-date, createdAt: 'date-now`]; yang dapat di simpan ke local phone;
         * Stripe akan membuatkan invoice yang akan tersimpan ke history user dan admin;
+2. User sukses melakukan *subscription* dan tercatat ke dalam log transaksi;
     *** Kemungkinan skenario ***
     - Jika user membeli lebih dari 1 plan di dalam satu akun maka akan ada dua plan yang terdaftar
     atau lebih - maksimal 5 plans;
-        * jika user sudah mencapai limit plan maka semua tombol subscribe akan *disabled*
+      * jika user sudah mencapai limit plan maka semua tombol subscribe akan *disabled*;
     - Jika plan sudah expired maka akan lanjut ke langkah ***renew plan***;
     *** Skenario Abusive - maks 3 x 1 min ***
     Jika user melakukan spam untuk pembelian maka tandai IP Address
@@ -143,8 +204,42 @@ atau login, cukup klik tombol Login with Google;
 
 
 
-    - User memilih addon - ditambahkan ke keranjang(optional)
-        * Whey protein
-        *             
+#### 🔄 Renew Subscription plan ####
+Saat sebuah plan milik user sudah kadaluarsa maka kode QR unik tidak akan berlaku lagi maka
+user harus *renew subscription* agar bisa mendapatkan kode QR unik baru yang valid;
+1. User melakukan scan kode QR unik atau melihat langsung bahwa plan sudah tidak aktif;
+    * Scan gagal karena kode sudah tidak valid;
+    * Informasi plan menunjukan status tidak aktif;
+    * Tombol *renew* muncul;
+2. User melakukan *renew subscription*;
+    - User dialihkan ke halaman Stripe untuk melakukan *renew subscription* dengan;
+        * Stripe akan menerima status user dan jumlah *renew subscription* user;
+            - jika user tidak terverifikasi maka tolak pembayaran;
+            - jika user sudah mencapai limit *subscription* maka minta user hapus
+            *subscription* sebelumnya terlebih dahulu;
+        * Jika user membatalkan atau *renew subscription* gagal maka kembali ke 
+        halaman plan membership;
+        * Jika *renew subscription* berhasil maka user akan dialihkan ke halaman
+        dashboard dan mendapatkan kode QR unik baru bernilai `hashedData` yang bernilai:
+        [`isSubscribed: true, plan: 'weekly', expiresIn: 'XXXmin' tier: 'casual', isVerified: true, userId: 'cuuid', signature: "encrypted_hash, startDate: 'some-date', endDate: 'some-date', createdAt: 'date-now'`]; yang dapat di simpan ke local phone;
+        * Stripe akan membuatkan invoice yang akan tersimpan ke history user dan admin;
+    - App mengalihkan user ke halaman Dashboard;
+3. *Renew subscription* berhasil dan user dapat mengakses benefit gym kembali;
+    *** Skenario Abusive - maks 3 x 1 min ***
+    Jika user melakukan spam untuk pembelian maka tandai IP Address
+    sebagai spammer pada rute terkait.
 
-#### Existing User ####
+
+
+#### ❌ Cancel Subscription ####
+Saat user ingin membatalkan sebuah *subscription* user akan melakukan hal-hal berikut:
+1. User klik *Cancel Subscription* pada sebuah *active plan*;
+2. Popup konfirmasi pembatalan muncul;
+    - User klik No maka *Cancel Subscription* dibatalakan;
+    - User klik Yes, cancel maka *Cancel Subscription* berhasil;
+        * server akan cek plan user dan menghapusnya dari database;
+        * Kode QR unik jadi invalid;
+    - Lanjut ke langkah selanjutnya;
+3. Plan akan menghilang dari Dashboard - user berhasil *Cancel Subscription*;
+
+
