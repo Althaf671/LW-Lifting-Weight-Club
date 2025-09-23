@@ -1,0 +1,36 @@
+// dev.scss
+@use '../abstract/index' as *;
+
+.dev {
+    width: 100vw;
+    height: 100vh;
+    @include custom-flex(column, wrap, space-evenly, center);
+
+    padding: 5rem 3.5rem;
+    background-color: $grey-dark-color;
+    background-image: radial-gradient(ellipse, rgba(255, 255, 255, 0.099) 1px, transparent 1px);
+    background-size: 21px 21px;
+    background-position: center;
+}
+
+.inner_dev_container {
+    width: 100%;
+    flex-wrap: wrap;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 3rem;
+}
+
+.item-container {
+    @include custom-flex(row, wrap, center, center);
+}
+
+.icon_container {
+    @include custom-flex(row, wrap, center, center);
+    @include custom-bg-border();
+
+    padding: 0.25rem 1rem;
+    gap: 0.5rem;
+}

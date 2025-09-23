@@ -1,0 +1,33 @@
+// navbar.scss
+
+@use '../abstract/index' as *;
+
+.navbar {
+    width: 97.5vw;
+    min-width: 70vw;
+    @include custom-flex(row, nowrap, space-between, center);
+    background-color: #1f1f1f;
+
+    padding: 0.25rem 1.2rem; 
+    border-radius: 30px
+}
+
+.left__navbar {
+    width: 50px;
+    height: 50px;
+    @include custom-flex(row, nowrap, center, center);
+    
+    .left__navbar img {
+        padding: 10rem;
+    }
+}
+
+.center__navbar {
+    font-size: 15.5px;
+}
+
+.right__navbar {
+    @include custom-flex(row, nowrap, center, center);
+    gap: 0.5rem;
+    font-weight: bold;
+}

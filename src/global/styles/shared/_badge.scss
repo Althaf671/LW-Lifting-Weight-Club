@@ -4,8 +4,9 @@
 .primary__bdg {
     cursor: default;
     user-select: none;
-    border: 1px solid green;
+    border: 2px solid green;
     background-color: $green-light-color;
+    @include custom-flex(row, nowrap, center, center);
 
     max-width: 100px;
     padding: 0.15rem 1rem;
@@ -15,8 +16,9 @@
 .destroy__bdg {
     cursor: default;
     user-select: none;
-    border: 1px solid #991b1b;
+    border: 2px solid #991b1b;
     background-color: $red-light-color;
+    @include custom-flex(row, nowrap, center, center);
 
     max-width: 100px;
     padding: 0.15rem 1rem;
@@ -24,20 +26,32 @@
 }
 
 .default__bdg {
-    cursor: default;
-    user-select: none;
+    cursor: pointer;
+    text-align: center;
+    @include custom-bg-border(black, white, 2px solid white, 18px);
+    @include custom-flex(row, nowrap, center, center);
+
+    box-shadow: 0 2px 8px 2px rgba(255, 255, 255, 0.075);
+    padding: 0.2rem 0.75rem;
+    gap: 0.25rem;
+
 }
 
 .blacklisted__bdg {
     cursor: default;
     user-select: none;    
+    @include custom-bg-border(white, black, 2px solid $grey-light-color, 18px);
+    @include custom-flex(row, nowrap, center, center);
+
+    padding: 0.15rem 1rem;
 }
 
 .verified__bdg {
     cursor: default;
     user-select: none;  
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    @include custom-flex(row, wrap, center, center);
+    @include custom-bg-border(white, $blue-light-color, 2px solid $blue-light-color, 18px);
+
+    padding: 0.15rem 1rem;
     gap: 0.25rem;
 }

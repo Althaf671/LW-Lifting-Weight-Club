@@ -7,12 +7,18 @@ export function PrimaryBadge({
     status = "active",
     variant = "primary",
     children,
-    isLoading = false
+    isLoading = false,
+    ariaLabel,
+    role,
 }: BadgeProps) {
     return (
-        <div className="primary__bdg">
+        <span 
+            aria-label={ariaLabel} 
+            role={role}
+            className="primary__bdg"
+        >
             {isLoading ? <Loading /> : children}
-        </div>
+        </span>
     );
 };
 
@@ -20,24 +26,36 @@ export function DestroyBadge({
     status = "inactive",
     variant = "destroy",
     children,
-    isLoading = false
+    isLoading = false,
+    ariaLabel,
+    role
 }: BadgeProps) {
     return (
-        <div className="destroy__bdg">
+        <span 
+            aria-label={ariaLabel} 
+            role={role}
+            className="destroy__bdg"
+        >
             {isLoading ? <Loading /> : children}
-        </div>
+        </span>
     );
 };
 
 export function DefaultBadge({
     variant = "default",
     children,
-    isLoading = false
+    isLoading = false,
+    ariaLabel,
+    role
 }: BadgeProps) {
     return (
-        <div className="default__bdg">
+        <span 
+            aria-label={ariaLabel} 
+            role={role}
+            className="default__bdg"
+        >
             {isLoading ? <Loading /> : children}
-        </div>
+        </span>
     );
 };
 
@@ -45,12 +63,18 @@ export function BlacklistedBadge({
     status = "blacklisted",
     variant = "blacklisted",
     children,
-    isLoading = false
+    isLoading = false,
+    ariaLabel,
+    role
 }: BadgeProps) {
     return (
-        <div className="blacklisted_bdg">
+        <span 
+            aria-label={ariaLabel} 
+            role={role}
+            className="blacklisted__bdg"
+        >
             {isLoading ? <Loading /> : children}
-        </div>
+        </span>
     );
 };
 
@@ -58,11 +82,17 @@ export function VerifiedBadge({
     status = "verified",
     variant = "verified",
     children,
-    isLoading = false
+    isLoading = false,
+    ariaLabel,
+    role
 }: BadgeProps) {
     return (
-        <div className="verified__bdg">
+        <span 
+            aria-label={ariaLabel} 
+            role={role}
+            className="verified__bdg"
+        >
             {isLoading ? <Loading /> : children}
-        </div>
+        </span>
     );
 };

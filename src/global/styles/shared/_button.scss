@@ -14,7 +14,7 @@
 
     &:hover {
         transform: translateY(-1.25px);
-        box-shadow: 0 5px 8px 1.5px rgba(255, 255, 255, 0.1);
+        box-shadow: 0 5px 8px 1.5px rgba(255, 255, 255, 0.075);
     }
 }
 
@@ -32,7 +32,7 @@
 
     &:hover {
         transform: translateY(-1.25px);
-        box-shadow: 0 5px 8px 1.5px rgba(255, 255, 255, 0.1);
+        box-shadow: 0 5px 8px 1.5px rgba(255, 255, 255, 0.075);
     }
 }
 
@@ -49,7 +49,7 @@
 
     &:hover {
         transform: translateY(-1.25px);
-        box-shadow: 0 5px 8px 1.5px rgba(255, 255, 255, 0.1);
+        box-shadow: 0 5px 8px 1.5px rgba(255, 255, 255, 0.075);
     }
 }
 
@@ -67,6 +67,21 @@
 
     &:hover {
         transform: translateY(-1.25px);
-        box-shadow: 0 5px 8px 1.5px rgba(255, 255, 255, 0.1);
+        box-shadow: 0 5px 8px 1.5px rgba(255, 255, 255, 0.075);
     }
+}
+
+// Link buttton
+.link__btn {
+    cursor: pointer;
+    @include transition-smooth;
+
+    letter-spacing: 0.4px;
+    max-width: 150px;
+    padding: 0.5rem;
+    border-radius: 8.5px;
+
+    &:hover {
+        text-decoration: underline;
+    }    
 }
