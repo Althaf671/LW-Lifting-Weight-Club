@@ -5,7 +5,7 @@ Web App Lifiting memiliki 2 flow secara garis besar yaitu user flow dan admin fl
 
 ## ======== USER FLOW ========= ##
 ### Auth ###
-Dimulai dengan auth terlebih dahulu
+Dimulai dengan auth terlebih dahulu.
 
 
 
@@ -32,7 +32,7 @@ dan Refresh Token dan menyimpan sebagai cookie(s) baru untuk dikirim ke user;
 **Concurrent Access Limit and Renew QR code** </br>
 Jika suatu waktu kode QR unik user dicuri maka perlu *concurrent access limit* yaitu kode 
 hanya bisa di scan setiap 5x setiap 1 menit. User juga dapat melakukan renew QR code yang
-akan mengubah *field* createdAt (saja) dan field lain tetap sama dan setiap scan kode QR 
+akan mengubah **field createdAt & id** (saja) dan field lain tetap sama dan setiap scan kode QR 
 akan dicatat ke log;
 
 
@@ -69,7 +69,7 @@ akan dicatat ke log;
     - Kode OTP yang dimasukan benar dan status akun user terverifikasi;
 
 4. App mengalihkan user ke halaman login, lanjut ke langkah ***Login***
-    *** Skenario Abusive - maks 5 x 1 min ***
+    *** Skenario Abusive - maks 3 x 1 min ***
     Jika user melakukan spam *submit* form OTP maka tandai IP Address
     sebagai spammer pada rute terkait.
 
@@ -120,9 +120,6 @@ atau di halaman Setting;
         * jika format salah maka beri respon error;
         * jika format benar maka lanjutkan ke langkah berikutnya;
 2. User klik tombol *sumbit* dan *challenge* reCaptcha muncul;
-    - User diminta menyelesaikan *challenge* reCaptcha v2;
-        * jika *challenge* gagal maka akan otomatis ke-*reset*;
-        * jika berhasil maka lanjut ke langkah berikutnya;
     - Server menerima email dan mencocokan dengan email user;
         * jika email tidak cocok maka beri respon email salah;
         * jika email cocok maka server buat email berisi link
@@ -142,6 +139,9 @@ dalam 20 menit;
     - Jika format password salah maka beri respon error;
     - Jika format password benar maka lanjut ke langkah berikutnya;
 2. User mengisi kolom konfirmasi password dan zod akan memvalidasi;
+    - User diminta menyelesaikan *challenge* reCaptcha v2;
+        * jika *challenge* gagal maka akan otomatis ke-*reset*;
+        * jika berhasil maka lanjut ke langkah berikutnya;
     - Jika password tidak sesuai maka aksi tidak dapat dilanjutkan sampai password cocok;
     - Jika password cocok maka server menerima password dan memproses;
     - Semua active session akan otomatis logout;
@@ -190,7 +190,7 @@ Saat user memutuskan untuk menonaktifkan akun dia dapat melakukan langkah beriku
         halaman plan membership;
         * Jika *subscription* berhasil maka user akan dialihkan ke halaman
         dashboard dan mendapatkan kode QR unik bernilai `hashedData` yang bernilai:
-        [`isSubscribed: true, plan: 'weekly', expiresIn: 'XXXsec' tier: 'casual', isVerified: true, userId: 'cuuid', signature: "encrypted_hash, startDate: 'some-date', endDate: 'some-date, createdAt: 'date-now`]; yang dapat di simpan ke local phone;
+        [`isSubscribed: true, plan: 'weekly', expiresIn: 'XXXsec' tier: 'casual', isVerified: true, userId: 'cuuid', signature: "encrypted_hash, startDate: 'some-date', endDate: 'some-date, createdAt: 'date-now, id: cuuid`]; yang dapat di simpan ke local phone;
         * Stripe akan membuatkan invoice yang akan tersimpan ke history user dan admin;
 2. User sukses melakukan *subscription* dan tercatat ke dalam log transaksi;
     *** Kemungkinan skenario ***
@@ -221,7 +221,7 @@ user harus *renew subscription* agar bisa mendapatkan kode QR unik baru yang val
         halaman plan membership;
         * Jika *renew subscription* berhasil maka user akan dialihkan ke halaman
         dashboard dan mendapatkan kode QR unik baru bernilai `hashedData` yang bernilai:
-        [`isSubscribed: true, plan: 'weekly', expiresIn: 'XXXmin' tier: 'casual', isVerified: true, userId: 'cuuid', signature: "encrypted_hash, startDate: 'some-date', endDate: 'some-date', createdAt: 'date-now'`]; yang dapat di simpan ke local phone;
+        [`isSubscribed: true, plan: 'weekly', expiresIn: 'XXXmin' tier: 'casual', isVerified: true, userId: 'cuuid', signature: "encrypted_hash, startDate: 'some-date', endDate: 'some-date', createdAt: 'date-now', id: cuuid`]; yang dapat di simpan ke local phone;
         * Stripe akan membuatkan invoice yang akan tersimpan ke history user dan admin;
     - App mengalihkan user ke halaman Dashboard;
 3. *Renew subscription* berhasil dan user dapat mengakses benefit gym kembali;
@@ -243,3 +243,50 @@ Saat user ingin membatalkan sebuah *subscription* user akan melakukan hal-hal be
 3. Plan akan menghilang dari Dashboard - user berhasil *Cancel Subscription*;
 
 
+### ⚙️ User Dashboard ###
+1. User dapat mengakses dashboard pribadi jika sudah melakukan registrasi dan masuk,
+user akan di hadapakan ke halaman utama yaitu dashboard yang berisi **card plan** - 
+tombol manage plan, jumlah active plan (x/5), kemudian log *history subcription plan*, 
+card total uang keluar, card total *scan* kode QR unik, dan profil card. di pojok kanan
+atas user dapat klik tombol navbar atau show qr code/card plan;
+2. Saat user klik tombol navbar maka navbar akan muncul dan user punya kebebasan memilih
+ke halaman mana saja sesuai dari yang tersedia di navbar - untuk halaman internal user ada
+halaman **manage plan***, halaman **notifikasi**, halaman **setting** dan tombol **logout**;
+3. User memilih membuka halaman **manage plan**;
+    - User akan melihat layout berupa layout atas dan bawah;
+        * layout atas terdiri dari slider plan user, jumlah plan (x/5), dan sebuah tombol
+        untuk tambah plan;
+            - jika user klik tombol tambah plan maka akan kembali ke halaman plan untuk memilih
+            dan melakukan transaksi sampai sukses atau dibatalkan;
+            - sebuah **card plan** dapat diklik, saat diklik akan menampilkan gambar detail dari satu 
+            plan mulai dari sisa durasi, status kartu, nama anggota, detail plan, dan kode QR dan sebuah
+            kode QR berukuran besar di bawah *card*;
+            - di antara *card* dan kode QR besar ada tombol *renew* kode QR dan *cancel subscription*.
+            user dapat klik tombol *renew* dan server akan memperbarui kode QR menjadi baru dan kode QR lama expired 
+            dan dihapus.
+            - kemudian user dapat klik tombol *cancel subcription*, selanjutnya lihat ***Cancel Subscription***
+        * layout bawah terdiri dari log history *scan* kode QR selama 1 minggu dan sebuah tombol untuk
+        *switch* ke log history transaksi;
+    - User dapat kembali ke navbar dan melihat menu lain untuk dipilih;
+4. User memilih membuka halaman **notifikasi**;
+    - User akan melihat 1 layout berisi semua notifikasi, yaitu notifikasi *subcription*,
+    *cancel subscription*, dan *scan* kode QR berhasil ataupun gagal;
+    - User dapat kembali ke navbar dan melihat menu lain untuk dipilih;
+5. User memilih membuka halaman **setting**;
+    - User akan melihat layout atas, layout tengah, dan layout bawah;
+        * layout atas berisi data user yang telah dimasukan seperti tanggal registrasi, status akun, email, nama,
+        foto profile yang tidak bisa diedit;
+        * layout tengah berisi tombol ganti password dan tombol hubungkan ke Google (jika belum terhubung);
+            - jika user yang registrasi dengan credentials maka dapat menautkan akun dengan aku Google akan bisa melakukan
+            passwordless login, jika user mendaftar atau sudah terhubung ke akun Google maka tombol ini akan hilang;
+            - jika user klik tombol ubah password maka user akan dialihkan ke form reset password - untuk alur silakan lihat **Reset Password**;
+        * layout bawah berisi tabel Refresh Token aktif dan tidak aktif - kita sebut saja **session**;
+            - user dapat klik tombol logout all session dan ketika diklik maka akan muncul popup
+            konfirmasi dan user dapat klik Delete Sessions atau Cancel, server akan verifikasi token
+            yang jika sesuai maka semua session revoked dan forced logout;
+    - User dapat kembali ke navbar dan melihat menu lain untuk dipilih;
+6. User dapat klik tombol logout dengan modal Access Token dan Refresh Token keduanya dihapus tapi jika salah satu
+token tidak ada maka user tetap akan logged dalam status *forced*;
+    *** Skenario Abusive - maks 1 x 1 min ***
+    Jika user melakukan spam untuk semua rute di atas kecuali yang sudah ada ketentuan maka tandai IP Address
+    sebagai spammer pada rute terkait.

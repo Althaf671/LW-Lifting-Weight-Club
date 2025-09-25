@@ -4,6 +4,9 @@ import { Toaster } from 'sonner'
 
 import "./globals.css";
 import "../global/styles/main.scss";
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/effect-fade";
 
 const poppins = Poppins({
   subsets: ['latin'],

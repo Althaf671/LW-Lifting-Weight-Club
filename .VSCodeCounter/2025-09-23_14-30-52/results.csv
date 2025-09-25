@@ -1,0 +1,88 @@
+"filename", "language", "TypeScript JSX", "SCSS", "TypeScript", "PostCSS", "JavaScript", "JSON with Comments", "JSON", "XML", "Markdown", "comment", "blank", "total"
+"/Users/althaf/lifting-weight/README.md", "Markdown", 0, 0, 0, 0, 0, 0, 0, 0, 26, 0, 14, 40
+"/Users/althaf/lifting-weight/eslint.config.mjs", "JavaScript", 0, 0, 0, 0, 21, 0, 0, 0, 0, 0, 5, 26
+"/Users/althaf/lifting-weight/manual/eng/flow.md", "Markdown", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1
+"/Users/althaf/lifting-weight/manual/eng/setup.md", "Markdown", 0, 0, 0, 0, 0, 0, 0, 0, 29, 0, 3, 32
+"/Users/althaf/lifting-weight/manual/idn/flow-admin.md", "Markdown", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1
+"/Users/althaf/lifting-weight/manual/idn/flow-user.md", "Markdown", 0, 0, 0, 0, 0, 0, 0, 0, 214, 0, 32, 246
+"/Users/althaf/lifting-weight/manual/idn/setup.md", "Markdown", 0, 0, 0, 0, 0, 0, 0, 0, 31, 0, 3, 34
+"/Users/althaf/lifting-weight/manual/idn/strategy.md", "Markdown", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1
+"/Users/althaf/lifting-weight/middleware.ts", "TypeScript", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1
+"/Users/althaf/lifting-weight/next.config.ts", "TypeScript", 0, 0, 14, 0, 0, 0, 0, 0, 0, 9, 3, 26
+"/Users/althaf/lifting-weight/package-lock.json", "JSON", 0, 0, 0, 0, 0, 0, 6825, 0, 0, 0, 1, 6826
+"/Users/althaf/lifting-weight/package.json", "JSON", 0, 0, 0, 0, 0, 0, 45, 0, 0, 0, 1, 46
+"/Users/althaf/lifting-weight/postcss.config.mjs", "JavaScript", 0, 0, 0, 0, 4, 0, 0, 0, 0, 0, 2, 6
+"/Users/althaf/lifting-weight/public/file.svg", "XML", 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1
+"/Users/althaf/lifting-weight/public/globe.svg", "XML", 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1
+"/Users/althaf/lifting-weight/public/next.svg", "XML", 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1
+"/Users/althaf/lifting-weight/public/vercel.svg", "XML", 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1
+"/Users/althaf/lifting-weight/public/window.svg", "XML", 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1
+"/Users/althaf/lifting-weight/src/app/(auth)/admin-auth/page.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1
+"/Users/althaf/lifting-weight/src/app/(auth)/client-auth/forgot-password/page.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1
+"/Users/althaf/lifting-weight/src/app/(auth)/client-auth/page.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1
+"/Users/althaf/lifting-weight/src/app/(auth)/client-auth/reset-password/page.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1
+"/Users/althaf/lifting-weight/src/app/(auth)/client-auth/verification/page.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1
+"/Users/althaf/lifting-weight/src/app/(auth)/shared/api/login.api.ts", "TypeScript", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1
+"/Users/althaf/lifting-weight/src/app/(auth)/shared/api/register.api.ts", "TypeScript", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1
+"/Users/althaf/lifting-weight/src/app/(auth)/shared/components/forgot.form.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1
+"/Users/althaf/lifting-weight/src/app/(auth)/shared/components/login.form.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1
+"/Users/althaf/lifting-weight/src/app/(auth)/shared/components/otp.form.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1
+"/Users/althaf/lifting-weight/src/app/(auth)/shared/components/register.form.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1
+"/Users/althaf/lifting-weight/src/app/(auth)/shared/components/reset.form.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1
+"/Users/althaf/lifting-weight/src/app/(dashboard)/admin/page.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1
+"/Users/althaf/lifting-weight/src/app/(dashboard)/admin/setting/page.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1
+"/Users/althaf/lifting-weight/src/app/(dashboard)/client/page.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1
+"/Users/althaf/lifting-weight/src/app/(status)/forbidden/page.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1
+"/Users/althaf/lifting-weight/src/app/(status)/maintenance/page.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1
+"/Users/althaf/lifting-weight/src/app/(status)/notFound/page.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1
+"/Users/althaf/lifting-weight/src/app/(status)/unauthorized/page.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1
+"/Users/althaf/lifting-weight/src/app/about/page.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1
+"/Users/althaf/lifting-weight/src/app/components/hero.tsx", "TypeScript JSX", 7, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 9
+"/Users/althaf/lifting-weight/src/app/dev/page.tsx", "TypeScript JSX", 331, 0, 0, 0, 0, 0, 0, 0, 0, 1, 5, 337
+"/Users/althaf/lifting-weight/src/app/globals.css", "PostCSS", 0, 0, 0, 22, 0, 0, 0, 0, 0, 0, 5, 27
+"/Users/althaf/lifting-weight/src/app/layout.tsx", "TypeScript JSX", 31, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 36
+"/Users/althaf/lifting-weight/src/app/page.tsx", "TypeScript JSX", 14, 0, 0, 0, 0, 0, 0, 0, 0, 3, 6, 23
+"/Users/althaf/lifting-weight/src/global/components/accordion.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1
+"/Users/althaf/lifting-weight/src/global/components/badge.tsx", "TypeScript JSX", 91, 0, 0, 0, 0, 0, 0, 0, 0, 1, 6, 98
+"/Users/althaf/lifting-weight/src/global/components/button.tsx", "TypeScript JSX", 165, 0, 0, 0, 0, 0, 0, 0, 0, 1, 8, 174
+"/Users/althaf/lifting-weight/src/global/components/dropdown.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1
+"/Users/althaf/lifting-weight/src/global/components/loading.tsx", "TypeScript JSX", 5, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 7
+"/Users/althaf/lifting-weight/src/global/components/navbar.tsx", "TypeScript JSX", 37, 0, 0, 0, 0, 0, 0, 0, 0, 1, 6, 44
+"/Users/althaf/lifting-weight/src/global/components/sidebar.admin.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 2, 3
+"/Users/althaf/lifting-weight/src/global/components/sidebar.client.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1
+"/Users/althaf/lifting-weight/src/global/components/skeleton.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1
+"/Users/althaf/lifting-weight/src/global/components/sonner.tsx", "TypeScript JSX", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1
+"/Users/althaf/lifting-weight/src/global/styles/about/_index.scss", "SCSS", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1
+"/Users/althaf/lifting-weight/src/global/styles/abstract/_index.scss", "SCSS", 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2
+"/Users/althaf/lifting-weight/src/global/styles/abstract/_mixins.scss", "SCSS", 0, 37, 0, 0, 0, 0, 0, 0, 0, 5, 9, 51
+"/Users/althaf/lifting-weight/src/global/styles/abstract/_variables.scss", "SCSS", 0, 5, 0, 0, 0, 0, 0, 0, 0, 1, 2, 8
+"/Users/althaf/lifting-weight/src/global/styles/auth/_forgot.form.scss", "SCSS", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1
+"/Users/althaf/lifting-weight/src/global/styles/auth/_index.scss", "SCSS", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1
+"/Users/althaf/lifting-weight/src/global/styles/auth/_login.form.scss", "SCSS", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1
+"/Users/althaf/lifting-weight/src/global/styles/auth/_register.form.scss", "SCSS", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1
+"/Users/althaf/lifting-weight/src/global/styles/auth/_reset.form.scss", "SCSS", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1
+"/Users/althaf/lifting-weight/src/global/styles/base/_index.scss", "SCSS", 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1
+"/Users/althaf/lifting-weight/src/global/styles/base/_reset.scss", "SCSS", 0, 10, 0, 0, 0, 0, 0, 0, 0, 1, 3, 14
+"/Users/althaf/lifting-weight/src/global/styles/dashboard/_index.scss", "SCSS", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1
+"/Users/althaf/lifting-weight/src/global/styles/dashboard/admin/_index.scss", "SCSS", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1
+"/Users/althaf/lifting-weight/src/global/styles/dashboard/client/_index.scss", "SCSS", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1
+"/Users/althaf/lifting-weight/src/global/styles/home/_dev.scss", "SCSS", 0, 29, 0, 0, 0, 0, 0, 0, 0, 1, 6, 36
+"/Users/althaf/lifting-weight/src/global/styles/home/_home.scss", "SCSS", 0, 12, 0, 0, 0, 0, 0, 0, 0, 1, 3, 16
+"/Users/althaf/lifting-weight/src/global/styles/home/_index.scss", "SCSS", 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2
+"/Users/althaf/lifting-weight/src/global/styles/main.scss", "SCSS", 0, 4, 0, 0, 0, 0, 0, 0, 0, 1, 0, 5
+"/Users/althaf/lifting-weight/src/global/styles/shared/_badge.scss", "SCSS", 0, 45, 0, 0, 0, 0, 0, 0, 0, 1, 11, 57
+"/Users/althaf/lifting-weight/src/global/styles/shared/_button.scss", "SCSS", 0, 66, 0, 0, 0, 0, 0, 0, 0, 6, 15, 87
+"/Users/althaf/lifting-weight/src/global/styles/shared/_footer.scss", "SCSS", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1
+"/Users/althaf/lifting-weight/src/global/styles/shared/_index.scss", "SCSS", 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3
+"/Users/althaf/lifting-weight/src/global/styles/shared/_navbar.scss", "SCSS", 0, 25, 0, 0, 0, 0, 0, 0, 0, 1, 7, 33
+"/Users/althaf/lifting-weight/src/global/styles/shared/_sidebar.scss", "SCSS", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1
+"/Users/althaf/lifting-weight/src/global/styles/status/_forbidden.scss", "SCSS", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1
+"/Users/althaf/lifting-weight/src/global/styles/status/_index.scss", "SCSS", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1
+"/Users/althaf/lifting-weight/src/global/styles/status/_maintance.scss", "SCSS", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1
+"/Users/althaf/lifting-weight/src/global/styles/status/_notFound.scss", "SCSS", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1
+"/Users/althaf/lifting-weight/src/global/styles/status/_unauthorized.scss", "SCSS", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1
+"/Users/althaf/lifting-weight/src/global/types/api.d.ts", "TypeScript", 0, 0, 23, 0, 0, 0, 0, 0, 0, 1, 4, 28
+"/Users/althaf/lifting-weight/src/global/types/index.d.ts", "TypeScript", 0, 0, 2, 0, 0, 0, 0, 0, 0, 1, 1, 4
+"/Users/althaf/lifting-weight/src/global/types/ui.d.ts", "TypeScript", 0, 0, 26, 0, 0, 0, 0, 0, 0, 6, 6, 38
+"/Users/althaf/lifting-weight/tsconfig.json", "JSON with Comments", 0, 0, 0, 0, 0, 27, 0, 0, 0, 0, 1, 28
+"Total", "-", 681, 241, 65, 22, 25, 27, 6870, 5, 300, 45, 222, 8503

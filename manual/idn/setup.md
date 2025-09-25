@@ -29,6 +29,8 @@ Dibutuhkan beberapa library tambahan untuk menjalankan web aplikasi ini, berikut
   `npm i lucide`
 > dotenv-cli - env management library
   `npm i -D dotenv-cli`
+> Cloudinary - CDN
+  `npm i next-cloudinary`
 
 Complete command:
-`npm i sass zod @tanstack/react-query gsap framer-motion lottie-react swiper sonner react-hook-form axios locomotive-scroll lucide`
+`npm i sass zod @tanstack/react-query gsap framer-motion lottie-react swiper sonner react-hook-form axios locomotive-scroll lucide next-cloudinary`

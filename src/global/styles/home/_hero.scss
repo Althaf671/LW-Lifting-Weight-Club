@@ -1,0 +1,68 @@
+// hero.scss
+
+@use '../abstract/index' as *;
+
+.hero__section {
+    position: relative;
+    display: flex;
+    height: 100vh;
+
+    h1 {
+        position: absolute;
+        top: 48.5%;
+        left: 5%;
+        z-index: 99;
+        font-size: 2.25rem;
+        width: 50vw;
+    }
+
+    .swiper-pagination {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        transform: none;
+        width: auto;
+        margin-left: 24px;
+        margin-bottom: 15px;
+        display: flex;
+        justify-content: flex-start;
+    }
+
+    .slider__container{
+        height: 70vh;
+        user-select: none;
+
+    .my-custom-bullet {
+        display: inline-block;
+        width: 20px;
+        height: 6px;
+        border-radius: 4px;
+        background: #bbb;
+        margin: 0 4px;
+        transition: width 0.7s, background 0.6s;
+    }
+
+    .swiper-pagination-bullet-active.my-custom-bullet {
+        width: 62px;
+        background: #c9c9c9;
+    }
+
+        .slider__content {
+            position: relative;
+            height: 100%;
+            filter: brightness(80%);
+            user-select: none;
+
+            video {
+                height: 100%;
+                object-fit: cover;
+                object-position: -200px 0px;
+                filter: brightness(90%);
+            }
+            
+        }
+    }
+
+}
+
+

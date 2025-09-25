@@ -2,14 +2,13 @@
 @use '../abstract/index' as *;
 
 .home {
+    position: relative;
     width: 100vw;
-    height: 100vh;
-    @include custom-flex(column, nowrap, flex-start, center);
+    height: 100%;
     gap: 1rem;
 
     background-color: $grey-dark-color;
     background-image: radial-gradient(ellipse, rgba(255, 255, 255, 0.099) 1.5px, transparent 1px);
     background-size: 21px 21px;
     background-position: center;
-    padding-top: 1.5rem;
 }

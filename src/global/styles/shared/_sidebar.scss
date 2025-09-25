@@ -1,0 +1,165 @@
+// sidebars
+
+@use '../abstract//index' as *;
+
+/* sidebar home */
+.sidebar__home {
+    position: absolute;
+    top: 0;
+    left: 0;
+    @include custom-flex(column, nowrap, flex-start, center);
+
+    color: black;
+    width: 100vw;
+    height: 100vh;
+    max-height: 100vh;
+    transform: translateY(-105vh);
+    background-color: #F6F4F0;
+    transition: transform 1s ease;
+
+    .sidebar-home__upper__sidebar {
+        @include custom-flex(row, nowrap, flex-start, center);
+        width: 97.5vw;
+        min-width: 70vw;
+
+        padding: 0.75rem 0.5rem; 
+
+        .logo {
+            padding: 0.75rem 0.5rem; 
+        }
+    }
+
+    .sidebar-home__center__sidebar {
+        @include custom-flex(column, nowrap, center, center);
+        width: 80vw;
+        min-width: 70vw;
+        gap: 1.5rem;
+
+        padding: 0rem;
+        margin: 2.5rem 0;
+
+        .membership-link, .shop-link {
+            width: 100%;
+            border: 1.5px solid black;
+            height: 13vh;
+            border-radius: 12px;
+            box-shadow: 0 1.5px 2px 3px rgba(0, 0, 0, 0.025);
+        }
+
+        .additional-wrapper {
+            @include custom-flex(row, nowrap, center, center);
+            gap: 1rem;
+            width: 100%;
+
+            .coach-link {
+                position: relative;
+                width: 65%;
+                height: 11vh;
+                border-radius: 12px;
+                box-shadow: 0 1.5px 2px 3px rgba(0, 0, 0, 0.025);
+
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    border-radius: 12px;
+                    filter: brightness(70%);
+                }
+
+                p {
+                    position: absolute;
+                    bottom: 5;
+                    left: 15;
+                    color: #F6F4F0;
+                }
+            }
+
+            .support-link {
+                @include custom-flex(column, nowrap, center, center);
+                border: 1.5px solid black;
+                width: 35%; 
+                height: 11vh; 
+                border-radius: 12px;  
+                box-shadow: 0 1.5px 2px 3px rgba(0, 0, 0, 0.025); 
+                
+                font-size: 13px;
+            }
+        }
+
+        .account-link {
+            @include custom-flex(row, nowrap, space-between, center);
+            border-top: 1.5px solid black;
+            border-bottom: 1.5px solid black;
+            width: 100%;
+
+            padding: 0.55rem 0.5rem 0.55rem 0;
+
+            .cart {
+                background-color: rgba(38, 38, 38, 0.95);
+                border-radius: 6px;
+                padding: 5.5px;
+               
+            }
+        }
+    }
+
+    .sidebar-home__lower__sidebar {
+        @include custom-flex(column, nowrap, space-between, flex-start);
+        background-color: $grey-dark-color;
+        color: white;
+        width: 100%;
+        height: 100%;
+        border-top-left-radius: 60px;
+        border-top-right-radius: 60px;
+        margin-top: 3.5rem;
+
+        .sidebar-home-upper__lower-sidebar {
+            @include custom-flex(row, nowrap, space-between, flex-start);
+            width: 100%;
+            padding: 2.25rem 2.75rem 1rem 2.75rem;
+
+            .sidebar-home__lower__sidebar__left {
+                @include custom-flex(row, nowrap, space-between, flex-start);
+                width: 57.5%;
+
+                .company-footer, .social-footer {
+                    
+                    h3 {
+                        
+                        font-size: 15px;
+                        letter-spacing: 0.5px;
+                        margin-bottom: 0.25rem;
+                    }
+
+                    p {
+                        font-size: 12px;
+                        margin-bottom: 3px;
+                        opacity: 75%;
+                    }
+                }    
+            }
+
+        }
+
+        .sidebar-home-lower__lower-sidebar {
+            width: 100%;
+            padding: 0.6rem 0;
+            border-top: 1px solid $grey-light-color;
+
+            p {
+                text-align: center;
+                font-size: 10px;
+                letter-spacing: 0.1px;
+                opacity: 75%;
+            }
+
+        }
+
+
+    }
+    
+}
+
+.show {
+    transform: translateY(0);
+}

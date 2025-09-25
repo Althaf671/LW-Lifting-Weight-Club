@@ -3,31 +3,90 @@
 @use '../abstract/index' as *;
 
 .navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
     width: 97.5vw;
     min-width: 70vw;
     @include custom-flex(row, nowrap, space-between, center);
-    background-color: #1f1f1f;
 
-    padding: 0.25rem 1.2rem; 
-    border-radius: 30px
-}
+    padding: 0.75rem 0.5rem; 
+    border-radius: 30px;
 
-.left__navbar {
-    width: 50px;
-    height: 50px;
-    @include custom-flex(row, nowrap, center, center);
-    
-    .left__navbar img {
-        padding: 10rem;
+    .left__navbar {
+        width: 50px;
+        height: 50px;
+        @include custom-flex(row, nowrap, center, center);
+        
+        .left__navbar img {
+            padding: 10rem;
+            background-color: white;
+        }
     }
-}
 
-.center__navbar {
-    font-size: 15.5px;
-}
+    .center__navbar {
+        font-size: 15.5px;
+    }
 
-.right__navbar {
-    @include custom-flex(row, nowrap, center, center);
-    gap: 0.5rem;
-    font-weight: bold;
+    .right__navbar {
+        @include custom-flex(row, nowrap, center, center);
+        gap: 0.5rem;
+        z-index: 1100;
+
+        .qr-btn {
+            width: 42px;
+            height: 42px;
+            padding: 7px;       
+            border-radius: 2px;
+            backdrop-filter: blur(1px) brightness(20%);
+            box-shadow: 0 1px 2px 3px rgba(255, 255, 255, 0.01);
+        }
+
+        .toggle-btn-wrapper {
+            position: relative;
+            width: 42px;
+            height: 42px;
+            cursor: pointer;
+
+            .toggle-btn-border {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;       
+                border-radius: 2px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                backdrop-filter: blur(1px) brightness(20%);
+            }
+
+            svg {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                padding: 7px;
+                transition: opacity 0.3s ease, transform 0.3s ease;
+                box-shadow: 0 1px 2px 3px rgba(255, 255, 255, 0.01);
+            }
+
+            .show {
+                opacity: 1;
+                transform: rotate(0deg) scale(1);
+                pointer-events: auto;
+            }
+
+            .hide {
+                opacity: 0;
+                transform: rotate(90deg) scale(0.8);
+                pointer-events: none;
+            }
+        }
+        
+
+    }
+
 }

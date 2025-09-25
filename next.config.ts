@@ -2,6 +2,11 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   /* config options here */
+  /*allowedDevOrigins: [
+    "http://localhost:3001",
+    "http://10.48.55.191",
+    "10.68.200.190",
+  ],*/
   reactStrictMode: true,
   turbopack: {
     root: __dirname,
