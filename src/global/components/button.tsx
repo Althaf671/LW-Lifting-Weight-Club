@@ -1,6 +1,6 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 // button.tsx
 "use client";
-
 
 import { ButtonProps } from "../types";
 import Loading from "./loading";
