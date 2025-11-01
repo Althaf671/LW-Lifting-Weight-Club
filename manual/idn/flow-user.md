@@ -246,7 +246,7 @@ Saat user ingin membatalkan sebuah *subscription* user akan melakukan hal-hal be
 ### ⚙️ User Dashboard ###
 1. User dapat mengakses dashboard pribadi jika sudah melakukan registrasi dan masuk,
 user akan di hadapakan ke halaman utama yaitu dashboard yang berisi **card plan** - 
-tombol manage plan, jumlah active plan (x/5), kemudian log *history subcription plan*, 
+tombol manage plan, jumlah active plan (x/3), kemudian log *history subcription plan*, 
 card total uang keluar, card total *scan* kode QR unik, dan profil card. di pojok kanan
 atas user dapat klik tombol navbar atau show qr code/card plan;
 2. Saat user klik tombol navbar maka navbar akan muncul dan user punya kebebasan memilih
@@ -254,7 +254,7 @@ ke halaman mana saja sesuai dari yang tersedia di navbar - untuk halaman interna
 halaman **manage plan***, halaman **notifikasi**, halaman **setting** dan tombol **logout**;
 3. User memilih membuka halaman **manage plan**;
     - User akan melihat layout berupa layout atas dan bawah;
-        * layout atas terdiri dari slider plan user, jumlah plan (x/5), dan sebuah tombol
+        * layout atas terdiri dari slider plan user, jumlah plan (x/3), dan sebuah tombol
         untuk tambah plan;
             - jika user klik tombol tambah plan maka akan kembali ke halaman plan untuk memilih
             dan melakukan transaksi sampai sukses atau dibatalkan;
